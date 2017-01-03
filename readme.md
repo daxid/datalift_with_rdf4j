@@ -17,10 +17,6 @@ after replacing ```**rdf4j-data**``` and ```**datalift-home**``` by absolute pat
 
 No login/pwd are recquiered to access RDF4J workbench
 
-If you want to setup users for datalift, go to the end of the file ```datalift-home/conf/datalift-application.properties ``` and follow the instructions (there are two lines to uncomment).
-You will then need to restart the container :
-	docker restart datalift1
-
 The following services should be accessible :
 * http://localhost:8080/rdf4j-workbench
 * http://localhost:8080/rdf4j-server
