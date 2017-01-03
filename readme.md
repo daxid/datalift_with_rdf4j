@@ -15,8 +15,6 @@ after replacing ```**rdf4j-data**``` and ```**datalift-home**``` by absolute pat
 
 # Runtime informations
 
-No login/pwd are recquiered to access RDF4J workbench
-
 The following services should be accessible :
 * http://localhost:8080/rdf4j-workbench
 * http://localhost:8080/rdf4j-server
@@ -24,3 +22,6 @@ The following services should be accessible :
 * http://localhost:8080/datalift/sparql
 
 Users and passwords for datalift project page can be managed in ```datalift-home/conf/datalift-users.properties```
+
+No login/pwd are recquiered to access RDF4J workbench
+
