@@ -1,9 +1,30 @@
-# Prepare Host file system for data persistence
+# GitHub repo. content
 
-On your host, copy datalift-home and rdf4j-data folders in a folder of your choice.
+Scripts and stuff for building a Docker image of :
+* the [Datalift](http://datalift.org/) data elevation platform,
+* backed by the [RDF4J](http://rdf4j.org/) triple store,
+* both hosted by a Tomcat 8.5 servlet container.
 
-# Launching datalift + rdf4j
+# Launching Datalift + RDF4J
 
-Go to the folder containing the persistent data (the one where you previously copied rdf4j-data and datalift-home) and launch :
+On the host machine, launch :
 
-	docker run --name='datalift1' -p 8080:8080 -v rdf4j-data:/rdf4j-data -v datalift-home:/datalift-home daxid/datalift_with_rdf4j
+	docker run -d --name='datalift1' -p 8080:8080 -v **rdf4j-data**:/rdf4j-data -v **datalift-home**:/datalift-home daxid/datalift_with_rdf4j
+
+after replacing ```**rdf4j-data**``` and ```**datalift-home**``` by absolute paths where you whant them to be on the host.
+
+# Runtime informations
+
+No login/pwd are recquiered to access RDF4J workbench
+
+If you want to setup users for datalift, go to the end of the file ```datalift-home/conf/datalift-application.properties ``` and follow the instructions (there are two lines to uncomment).
+You will then need to restart the container :
+	docker restart datalift1
+
+The following services should be accessible :
+* http://localhost:8080/rdf4j-workbench
+* http://localhost:8080/rdf4j-server
+* http://localhost:8080/datalift/project (with username ```datalft``` an password ```test```)
+* http://localhost:8080/datalift/sparql
+
+Users and passwords for datalift project page can be managed in ```datalift-home/conf/datalift-users.properties```
